@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Popular Movies</string>
+
+    <string name="vote_average_string">%1$s /10</string>
+    <string name="release_date_string">Release date: %1$s</string>
+    <string name="no_passed_movie_in_details">No movie data was passed!</string>
+    <string name="passing_movie_parcelable_key">currentMovieDetails</string>
+    <string name="on_saved_instance_state_movies_list_key">moviesList</string>
+    <string name="movie_type_popular">popular</string>
+    <string name="movie_type_top_rated">top_rated</string>
+    <string name="movie_type_favorite">favorite</string>
+    <string name="options_menu_popular_movies_text">Popular Movies</string>
+    <string name="options_menu_top_rated_movies_text">Top Rated Movies</string>
+    <string name="options_menu_favorite_movies_text">Favorite movies</string>
+    <string name="movie_list_no_connection_text">No Internet Connection.\nTurn on connection\nand  restart application.</string>
+    <string name="movie_detail_no_connection_text">No Internet Connection.\nTurn on connection \nand  restart application.</string>
+    <string name="on_saved_instance_state_number_of_favorite_movies">numberOfFavoriteMovies</string>
+    <string name="on_saved_instance_state_current_list_type">currentList</string>
+
+</resources>

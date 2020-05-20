@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBack"
+    android:paddingBottom="30dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/movie_detail_backdrop"
+            android:layout_width="@dimen/detail_backdrop_width"
+            android:layout_height="@dimen/detail_backdrop_height"
+            android:layout_marginStart="@dimen/detail_backdrop_margin_start"
+            android:layout_marginTop="@dimen/detail_backdrop_margin_top"
+            android:layout_marginEnd="@dimen/detail_backdrop_margin_end"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher_round"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/movie_detail_poster"
+            android:layout_width="@dimen/details_poster_width"
+            android:layout_height="@dimen/details_poster_height"
+            android:layout_marginStart="@dimen/details_poster_margin_left"
+            android:layout_marginTop="@dimen/details_poster_margin_top"
+            android:src="@mipmap/ic_launcher"
+            android:transitionName="animated"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/movie_vote_star"
+            android:layout_width="@dimen/detail_vote_star_width"
+            android:layout_height="@dimen/detail_vote_star_height"
+            android:layout_marginStart="@dimen/detail_vote_star_margin_start"
+            android:layout_marginTop="@dimen/detail_vote_star_margin_top"
+            android:background="@mipmap/star"
+            app:layout_constraintStart_toStartOf="@+id/movie_detail_poster"
+            app:layout_constraintTop_toBottomOf="@+id/movie_detail_poster" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/movie_detail_title"
+            android:layout_width="@dimen/detail_title_width"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/detail_title_margin_start"
+            android:layout_marginTop="@dimen/detail_title_margin_top"
+            android:layout_marginEnd="@dimen/detail_title_margin_end"
+            android:layout_marginBottom="@dimen/detail_title_margin_bottom"
+            android:textAlignment="center"
+            android:textSize="@dimen/detail_title_text_size"
+            app:layout_constraintBottom_toBottomOf="@+id/movie_vote_star"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/movie_detail_poster"
+            app:layout_constraintTop_toBottomOf="@+id/movie_detail_backdrop" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/movie_detail_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/detail_date_margin_start"
+            android:layout_marginTop="@dimen/detail_date_margin_top"
+            android:layout_marginEnd="@dimen/detail_date_margin_end"
+            android:gravity="end"
+            android:textAlignment="textEnd"
+            android:textSize="@dimen/detail_date_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/movie_detail_overview" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/movie_detail_vote_average"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/detail_vote_average_margin_start"
+            android:layout_marginTop="@dimen/detail_vote_average_margin_top"
+            android:layout_marginEnd="@dimen/detail_vote_average_margin_end"
+            android:layout_marginBottom="@dimen/detail_vote_average_margin_bottom"
+            android:textAlignment="center"
+            android:textSize="@dimen/detail_vote_average_text_size"
+            app:layout_constraintBottom_toBottomOf="@+id/movie_vote_star"
+            app:layout_constraintEnd_toStartOf="@+id/movie_detail_title"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/movie_vote_star"
+            app:layout_constraintTop_toTopOf="@+id/movie_vote_star" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/movie_detail_overview"
+            android:layout_width="@dimen/detail_overview_width"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/detail_overview_margin_start"
+            android:layout_marginTop="@dimen/detail_overview_margin_top"
+            android:layout_marginEnd="@dimen/detail_overview_margin_end"
+            android:textAlignment="center"
+            android:textSize="@dimen/detail_overview_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/movie_vote_star" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/movie_trailer"
+            android:layout_width="@dimen/movie_trailer_recycler_view_width"
+            android:layout_height="@dimen/movie_trailer_recycler_view_height"
+            android:layout_marginEnd="@dimen/movie_trailer_recycler_view_margin_end"
+            android:textAlignment="center"
+            android:textSize="@dimen/movie_trailer_recycler_view_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/movie_detail_overview"
+            app:layout_constraintTop_toBottomOf="@+id/movie_detail_date" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/movie_reviews"
+            android:layout_width="@dimen/movie_review_recycler_view_width"
+            android:layout_height="@dimen/movie_review_recycler_view_height"
+            android:layout_marginTop="@dimen/movie_review_recycler_view_margin_top"
+            android:layout_marginEnd="@dimen/movie_review_recycler_view_margin_end"
+            android:textAlignment="center"
+            android:textSize="@dimen/movie_review_recycler_view_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/movie_detail_overview"
+            app:layout_constraintTop_toBottomOf="@+id/movie_trailer" />
+
+        <ImageButton
+            android:id="@+id/favorite_button"
+            android:layout_width="@dimen/favorite_button_width"
+            android:layout_height="@dimen/favorite_button_height"
+            android:layout_marginTop="@dimen/favorite_button_margin_top"
+            android:layout_marginEnd="@dimen/favorite_button_margin_end"
+            android:background="@drawable/ripple_effect"
+            app:layout_constraintEnd_toEndOf="@+id/movie_detail_backdrop"
+            app:layout_constraintTop_toTopOf="@+id/movie_detail_backdrop"
+            app:srcCompat="@mipmap/ic_favorite_border_white_24dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
